@@ -1,8 +1,7 @@
 // Import the named functions you need from apiService.jsx
-import apiService from '../services/apiService'; // Import the default export
+import useFetch from "../services/useFetch";
 import { useParams, Navigate } from "react-router-dom";
 import styled from "styled-components";
-import { useEffect, useState } from "react";
 import { colors } from "../variables";
 
 const Container = styled.section`
@@ -53,40 +52,25 @@ const Div = styled.div`
   }
 `;
 
-const Profil = () => {
+function Profil() {
   const { id } = useParams();
-  const [fetchedData, setFetchedData] = useState(null);
-  const [isError, setIsError] = useState(false);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const userData = await apiService.getUserData(id); // Use apiService object
-        setFetchedData(userData);
-      } catch (error) {
-        console.log('Error fetching user data:', error); // Log the error
-
-        setIsError(true);
-      }
-    };
-
-    fetchData();
-  }, [id]);
+  const { fetchedData, isError, isLoading } = useFetch("user", id); // Make sure you're also tracking loading state
 
   if (isError) return <Navigate to="/NotFound" />;
-  if (!fetchedData) return <div>Loading...</div>;
+  if (isLoading || !fetchedData.userInfos) return <div>Loading...</div>; // Handle loading and undefined data
 
   return (
     <Container>
-       <Title>
+      <Title>
         <h1>
           Bonjour <span>{fetchedData.userInfos.firstName}</span>
         </h1>
         <h2>Félicitation ! Vous avez explosé vos objectifs hier</h2>
       </Title>
-      <Div></Div>
+      <Div>
+      </Div>
     </Container>
   );
-};
+}
 
 export default Profil;
