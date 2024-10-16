@@ -1,0 +1,73 @@
+// Sidebar.scss
+
+$background-color: black; // replace with colors.bgrd from your variables
+$big-screen-height: 91px; // replace with header.bigScreenHeight from your variables
+$small-screen-height: 68px; // replace with small header height for smaller screens
+$color-primary: #ff0101; // replace with colors.primary from your variables
+
+.aside {
+  background-color: $background-color;
+  width: 110px;
+  min-height: calc(100dvh - $big-screen-height);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  nav {
+    margin-bottom: 240px;
+    position: left;
+  }
+
+  ul {
+    margin: 200px 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 316px;
+    width: 64px;
+
+    li {
+      background-color: white;
+      width: 100%;
+      height: 64px;
+      border-radius: 6px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  a {
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  p {
+    color: #fff;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    transform: rotate(-90deg) translateX(0%);
+    width: 150px;
+  }
+
+  @media (max-width: 1320px) {
+    width: 70px;
+    min-height: calc(100dvh - $small-screen-height);
+
+    ul {
+      margin: 180px 0 0;
+      width: 40px;
+      height: 280px;
+
+      li {
+        background-color: white;
+        width: 100%;
+        height: 40px;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+// Root.scss
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%; // Ensure it takes up the full viewport height
+
+  .content {
+    display: flex;
+    flex: 1;
+  }
+
+  main {
+    flex: 1; // Take up the remaining space
+    padding: 20px;
+    overflow-y: auto; // Add scrolling if the content is too large
+  }
+}

@@ -4,6 +4,8 @@ import Profil from "./pages/profil";
 import Connexion from "./pages/connexion";
 import NotFound from "./pages/not_found";
 
+
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -29,7 +31,8 @@ const router = createBrowserRouter([
     ],
   },
 ]);
+
 function App() {
-  return <RouterProvider router={router} />;
+  return <RouterProvider router={router} />
 }
 export default App;

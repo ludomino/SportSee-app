@@ -1,0 +1,35 @@
+@import "../utils/_variable-mixin.scss";
+
+.error {
+  text-align: center;
+  margin: 100px auto;
+  padding: 40px;
+
+  h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: $color-primary;
+  }
+
+  p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 50px;
+  }
+
+  a {
+    color: $color2;
+    background-color: $color1;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: $color-primary;
+      color: $color1;
+    }
+  }
+}

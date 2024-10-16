@@ -1,46 +1,13 @@
 import { Link } from "react-router-dom";
 import sportSeeLogo from "./../assets/SportSee_logo.png";
-import styled from "styled-components";
-import { colors, header } from "../variables";
-
-const MainHeader = styled.header`
-display: flex;
-align-items: center;
-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-height: ${header.bigScreenHeight};
-background-color: ${colors.bgrd};
-color: ${colors.color2};
-  a {
-    color: ${colors.color2};
-  }
-  nav {
-    width: 100%;
-  }
-  ul {
-    font-size: 1.5rem;
-    display: flex;
-    justify-content: space-around;
-  }
-
-@media (max-width: 1320px) {
-  height: ${header.smallScreenHeight};
-  ul {
-  font-size: 1.2rem;
-  }
-}`;
-
-const LogoLink = styled.div`
-margin: 0 40px 0 28px;
-@media (max-width: 1320px) {
-  margin-left: 8px;
-} `;
+import "../sass/components/_header.scss";
 
 function Header() {
   return (
-    <MainHeader>
-      <LogoLink to="/">
+    <header className="main-header">
+      <Link to="/" className="logo-link">
         <img src={sportSeeLogo} alt="logo SportSee" />
-      </LogoLink>
+      </Link>
       <nav>
         <ul>
           <li>
@@ -57,7 +24,7 @@ function Header() {
           </li>
         </ul>
       </nav>
-    </MainHeader>
+    </header>
   );
 }
 

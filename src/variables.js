@@ -7,10 +7,12 @@ export const colors = {
   color4: "#74798c", //  grey
   color5: "#F7F7F7", // light grey
 };
+
 export const header = {
   smallScreenHeight: "68px",
   bigScreenHeight: "90px",
 };
+
 export const sidebar = {
   smallScreenHeight: "68px",
   bigScreenHeight: "90px",

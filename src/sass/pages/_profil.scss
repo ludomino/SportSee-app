@@ -1,0 +1,76 @@
+@import "../utils/_variable-mixin.scss";
+
+.container {
+  margin: 40px auto;
+  padding: 0 5%;
+
+  @media (max-width: 1024px) {
+    margin: 20px auto;
+    padding: 0 3%;
+  }
+}
+
+.charts-wrapper {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px 10px;
+
+  // Gestion des 3 charts carré
+  section {
+    border-radius: 5px;
+    width: 260px;
+    height: 260px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.05);
+  }
+
+  @media (max-width: 943px) {
+    justify-content: space-around;
+  }
+}
+
+.title {
+  margin-bottom: 40px;
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 500;
+
+    span {
+      color: $color-primary;
+    }
+  }
+
+  h2 {
+    font-size: 1.125rem;
+    font-weight: 400;
+  }
+
+  p {
+    font-size: 1.125rem;
+  }
+
+  @media (max-width: 1024px) {
+    margin-bottom: 30px;
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+
+.div {
+  display: flex;
+  margin-bottom: 40px;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  gap: 30px;
+
+  @media (max-width: 1320px) {
+    flex-direction: column;
+  }
+}

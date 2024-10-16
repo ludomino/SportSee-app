@@ -65,4 +65,10 @@ function useFetch(path, userId) {
   return { fetchedData, isError, isLoading }
 }
 
+// 3 fonctions user perf et activité
+
+// + promise all => envoie les données qui sont bonnes si les autres ne sont pas la elle envoie que ce qu'il ya
+// promize.race => renvoie le premier qui repond
+
+
 export default useFetch

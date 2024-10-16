@@ -1,0 +1,49 @@
+// Header.scss
+
+$big-screen-height: 91px; // replace with actual header.bigScreenHeight from variables
+$small-screen-height: 70px; // replace with actual header.smallScreenHeight from variables
+$background-color: black; // replace with colors.bgrd from variables
+$color2: #fff; // replace with colors.color2 from variables
+
+.main-header {
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  height: $big-screen-height;
+  background-color: $background-color;
+  color: $color2;
+
+  a {
+    color: $color2;
+  }
+
+  img {
+    height: 60px;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  ul {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  @media (max-width: 1320px) {
+    height: $small-screen-height;
+
+    ul {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.logo-link {
+  margin: 0 40px 0 28px;
+
+  @media (max-width: 1320px) {
+    margin-left: 8px;
+  }
+}
